@@ -1,4 +1,6 @@
 import { connect } from 'react-redux';
+import { compose } from 'recompose';
+import { view, lensPath, isNil, is } from 'ramda';
 
 const setForm = (n, v) => ({ type: 'setForm', path: 'form.' + n, payload: v });
 
