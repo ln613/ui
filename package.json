@@ -1,0 +1,25 @@
+{
+  "name": "@ln613/ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist",
+  "scripts": {
+    "start": "watch \"npm run build\" src",
+    "build": "babel src --out-dir dist"
+  },
+  "author": "Nan Li",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "watch": "^1.0.2"
+  },
+  "dependencies": {
+    "ramda": "^0.25.0",
+    "react": "^16.4.2",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0"
+  }
+}
