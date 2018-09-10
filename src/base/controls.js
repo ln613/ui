@@ -1,22 +1,23 @@
 import React from 'react';
 import { isNil } from 'ramda';
+import { withAll, withCheck } from './hoc';
 
 export const ElemDiv = ({children}) => <div class="pv8">{children}</div>
 
-export const textBox = p =>
+const textBox = p =>
   <ElemDiv>
     <input type="text" {...p} />
   </ElemDiv>
 
-export const checkBox = p =>
+const checkBox = p =>
   <input type="checkbox" checked={p.value} {...p} />
 
-export const radio = p =>
+const radio = p =>
   <ElemDiv>
     <input type="radio" {...p} />
   </ElemDiv>
 
-export const select = ({ options, placeholder, isGroup, size, multiple, onChange, value }) =>
+const select = ({ options, placeholder, isGroup, size, multiple, onChange, value }) =>
   <select onChange={onChange} size={size} multiple={multiple} value={value}>
     {isNil(placeholder) ? null : <option value="">{placeholder}</option>}
     {isGroup
@@ -33,7 +34,7 @@ const optionGroup = (key, options) =>
     {(options[key] || []).map(option)}
   </optgroup>
 
-export const checkBoxWithLabel = p => 
+const checkBoxWithLabel = p => 
   <ElemDiv>
     {checkBox(p)}
     {p.title ?
@@ -42,3 +43,7 @@ export const checkBoxWithLabel = p =>
       </label>
     : null}
   </ElemDiv>
+
+export const TextBox = withAll(textBox);
+export const Select = withAll(select);
+export const CheckBox = withCheck(checkBoxWithLabel);

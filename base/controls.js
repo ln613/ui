@@ -3,11 +3,13 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.checkBoxWithLabel = exports.select = exports.radio = exports.checkBox = exports.textBox = exports.ElemDiv = void 0;
+exports.CheckBox = exports.Select = exports.TextBox = exports.ElemDiv = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
 var _ramda = require("ramda");
+
+var _hoc = require("./hoc");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -28,8 +30,6 @@ var textBox = function textBox(p) {
   }, p)));
 };
 
-exports.textBox = textBox;
-
 var checkBox = function checkBox(p) {
   return _react.default.createElement("input", _extends({
     type: "checkbox",
@@ -37,15 +37,11 @@ var checkBox = function checkBox(p) {
   }, p));
 };
 
-exports.checkBox = checkBox;
-
 var radio = function radio(p) {
   return _react.default.createElement(ElemDiv, null, _react.default.createElement("input", _extends({
     type: "radio"
   }, p)));
 };
-
-exports.radio = radio;
 
 var select = function select(_ref2) {
   var options = _ref2.options,
@@ -66,8 +62,6 @@ var select = function select(_ref2) {
     return optionGroup(k, options);
   }) : options.map(option));
 };
-
-exports.select = select;
 
 var option = function option(o) {
   return _react.default.createElement("option", {
@@ -90,4 +84,9 @@ var checkBoxWithLabel = function checkBoxWithLabel(p) {
   }, p.title) : null);
 };
 
-exports.checkBoxWithLabel = checkBoxWithLabel;
+var TextBox = (0, _hoc.withAll)(textBox);
+exports.TextBox = TextBox;
+var Select = (0, _hoc.withAll)(select);
+exports.Select = Select;
+var CheckBox = (0, _hoc.withCheck)(checkBoxWithLabel);
+exports.CheckBox = CheckBox;

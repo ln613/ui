@@ -2,7 +2,7 @@
   "name": "@ln613/ui",
   "version": "1.0.0",
   "description": "",
-  "main": ".",
+  "main": "base",
   "scripts": {
     "start": "watch \"npm run build\" src",
     "build": "babel src --out-dir ."
