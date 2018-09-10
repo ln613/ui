@@ -1,6 +1,6 @@
-import {} from '';
-import { ElemDiv } from './controls';
-import { withAll, withCheck } from './hoc';
+import { withProps } from 'recompose';
+import { ElemDiv } from '../base/controls';
+import { withAll, withCheck } from '../base/hoc';
 import { Input, Dropdown, Checkbox, Responsive, Sidebar, Icon, Menu as _Menu, Loader } from 'semantic-ui-react';
 
 const textBox = p =>

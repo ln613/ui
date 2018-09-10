@@ -2,10 +2,10 @@
   "name": "@ln613/ui",
   "version": "1.0.0",
   "description": "",
-  "main": "dist",
+  "main": ".",
   "scripts": {
     "start": "watch \"npm run build\" src",
-    "build": "babel src --out-dir dist"
+    "build": "babel src --out-dir ."
   },
   "author": "Nan Li",
   "license": "MIT",
