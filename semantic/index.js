@@ -108,7 +108,7 @@ exports.withMobile = withMobile;
 
 var items = function items(menus, setVisible) {
   return (menus || []).map(function (x, i) {
-    return _react.default.createElement(Link, {
+    return _react.default.createElement(_reactRouterDom.Link, {
       to: '/' + (i === 0 ? '' : x),
       onClick: function onClick() {
         return setVisible(false);
@@ -178,7 +178,7 @@ var Ready = function Ready(_ref4) {
 exports.Ready = Ready;
 
 var ready = function ready(x) {
-  return (0, _ramda.is)(Array, x) ? x.length > 0 : (0, _ramda.is)(Object, x) ? Object.keys(x).length > 0 : !isNil(x);
+  return (0, _ramda.is)(Array, x) ? x.length > 0 : (0, _ramda.is)(Object, x) ? Object.keys(x).length > 0 : !(0, _ramda.isNil)(x);
 }; // table
 
 
@@ -242,7 +242,7 @@ var col = function col(idx, key, obj, children) {
   var c = (0, _ramda.find)(function (x) {
     return x.key === key;
   }, children) || (0, _ramda.find)(function (x) {
-    return isNil(x.key);
+    return (0, _ramda.isNil)(x.key);
   }, children) || {
     props: {}
   };
@@ -328,7 +328,7 @@ var select2 = function select2(_ref6) {
     size: size,
     multiple: multiple,
     value: value
-  }, isNil(placeholder) ? null : _react.default.createElement("option", {
+  }, (0, _ramda.isNil)(placeholder) ? null : _react.default.createElement("option", {
     value: ""
   }, placeholder), isGroup ? Object.keys(options).map(function (k) {
     return optionGroup(k, options);

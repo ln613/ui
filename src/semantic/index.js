@@ -1,7 +1,7 @@
-import { is, find } from 'ramda';
+import { is, find, isNil } from 'ramda';
 import React from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 import { compose, withProps } from 'recompose';
 import { ElemDiv } from '../base/controls';
 import { withAll, withCheck, withForm } from '../base/hoc';
