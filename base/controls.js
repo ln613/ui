@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.CheckBox = exports.Select = exports.TextBox = exports.ElemDiv = void 0;
+exports.Italic = exports.Bold = exports.CheckBox = exports.Select = exports.TextBox = exports.ElemDiv = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -90,3 +90,15 @@ var Select = (0, _hoc.withAll)(select);
 exports.Select = Select;
 var CheckBox = (0, _hoc.withCheck)(checkBoxWithLabel);
 exports.CheckBox = CheckBox;
+
+var Bold = function Bold(x) {
+  return "<b>".concat(x, "</b>");
+};
+
+exports.Bold = Bold;
+
+var Italic = function Italic(x) {
+  return "<i>".concat(x, "</i>");
+};
+
+exports.Italic = Italic;

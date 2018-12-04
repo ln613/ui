@@ -55,7 +55,10 @@ var select = function select(p) {
 var withTextValue = (0, _recompose.withProps)(function (p) {
   return _objectSpread({}, p, {
     options: (p.options || []).map(function (o) {
-      return !o.text && o.name ? _objectSpread({}, o, {
+      return !(0, _ramda.is)(Object, o) ? {
+        text: o,
+        value: o
+      } : !o.text && o.name ? _objectSpread({}, o, {
         text: o.name,
         value: o.id
       }) : o;

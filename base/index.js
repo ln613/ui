@@ -39,6 +39,18 @@ Object.defineProperty(exports, "CheckBox", {
     return _controls.CheckBox;
   }
 });
+Object.defineProperty(exports, "Bold", {
+  enumerable: true,
+  get: function get() {
+    return _controls.Bold;
+  }
+});
+Object.defineProperty(exports, "Italic", {
+  enumerable: true,
+  get: function get() {
+    return _controls.Italic;
+  }
+});
 
 var _hoc = require("./hoc");
 

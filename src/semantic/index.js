@@ -20,7 +20,14 @@ const select = p =>
   <ElemDiv>
     <Dropdown selection {...p} />
   </ElemDiv>
-const withTextValue = withProps(p => ({...p, options: (p.options || []).map(o => !o.text && o.name ? {...o, text: o.name, value: o.id} : o)}));
+
+const withTextValue = withProps(p => ({
+  ...p, options: (p.options || []).map(o =>
+    !is(Object, o) ? { text: o, value: o } : (
+      !o.text && o.name ? { ...o, text: o.name, value: o.id } : o
+    )
+  )
+}));
 
 const checkBox = p =>
   <ElemDiv>

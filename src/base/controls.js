@@ -47,3 +47,6 @@ const checkBoxWithLabel = p =>
 export const TextBox = withAll(textBox);
 export const Select = withAll(select);
 export const CheckBox = withCheck(checkBoxWithLabel);
+
+export const Bold = x => `<b>${x}</b>`;
+export const Italic = x => `<i>${x}</i>`;
