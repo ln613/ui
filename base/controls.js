@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Italic = exports.Bold = exports.CheckBox = exports.Select = exports.TextBox = exports.ElemDiv = void 0;
+exports.Italic = exports.Bold = exports.CheckBox = exports.Select = exports.Password = exports.TextBox = exports.ElemDiv = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -27,6 +27,12 @@ exports.ElemDiv = ElemDiv;
 var textBox = function textBox(p) {
   return _react.default.createElement(ElemDiv, null, _react.default.createElement("input", _extends({
     type: "text"
+  }, p)));
+};
+
+var password = function password(p) {
+  return _react.default.createElement(ElemDiv, null, _react.default.createElement("input", _extends({
+    type: "password"
   }, p)));
 };
 
@@ -86,6 +92,8 @@ var checkBoxWithLabel = function checkBoxWithLabel(p) {
 
 var TextBox = (0, _hoc.withAll)(textBox);
 exports.TextBox = TextBox;
+var Password = (0, _hoc.withAll)(password);
+exports.Password = Password;
 var Select = (0, _hoc.withAll)(select);
 exports.Select = Select;
 var CheckBox = (0, _hoc.withCheck)(checkBoxWithLabel);

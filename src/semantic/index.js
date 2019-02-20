@@ -115,7 +115,7 @@ const _Table = ({ data, name, link, equalWidth, setSort, children, history, isMo
       </thead>
       <tbody>
         {l.map((o, i) =>
-          <tr key={`tr${i}`} class={link ? "cp" : ""} onClick={() => link && history.push(is(Function, link) ? link(o.id) : '/' + name + '/' + o.id)}>
+          <tr key={`tr${i}`} class={link ? "cp" : ""} onClick={() => link && history.push(is(Function, link) ? link(o) : '/' + name + '/' + o.id)}>
             {keys.map(k => col(i, k, o, children))}
           </tr>
         )}

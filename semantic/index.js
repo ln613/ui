@@ -220,7 +220,7 @@ var _Table = function _Table(_ref5) {
       key: "tr".concat(i),
       class: link ? "cp" : "",
       onClick: function onClick() {
-        return link && history.push((0, _ramda.is)(Function, link) ? link(o.id) : '/' + name + '/' + o.id);
+        return link && history.push((0, _ramda.is)(Function, link) ? link(o) : '/' + name + '/' + o.id);
       }
     }, keys.map(function (k) {
       return col(i, k, o, children);

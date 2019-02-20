@@ -1,2 +1,2 @@
 export { withAll, withCheck, withForm } from './hoc';
-export { TextBox, Select, CheckBox, Bold, Italic } from './controls';
+export { TextBox, Password, Select, CheckBox, Bold, Italic } from './controls';

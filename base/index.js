@@ -27,6 +27,12 @@ Object.defineProperty(exports, "TextBox", {
     return _controls.TextBox;
   }
 });
+Object.defineProperty(exports, "Password", {
+  enumerable: true,
+  get: function get() {
+    return _controls.Password;
+  }
+});
 Object.defineProperty(exports, "Select", {
   enumerable: true,
   get: function get() {
