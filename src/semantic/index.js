@@ -16,6 +16,11 @@ const textBox = p =>
     <Input {...p} />
   </ElemDiv>
 
+const password = p =>
+  <ElemDiv>
+    <Input {...p} type="password" />
+  </ElemDiv>
+
 const select = p =>
   <ElemDiv>
     <Dropdown selection {...p} />
@@ -35,6 +40,7 @@ const checkBox = p =>
   </ElemDiv>
 
 export const TextBox = withAll(textBox);
+export const Password = withAll(password);
 export const Select = withAll(withTextValue(select));
 export const CheckBox = withCheck(checkBox);
 
