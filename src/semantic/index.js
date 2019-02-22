@@ -16,6 +16,11 @@ const textBox = p =>
     <Input {...p} />
   </ElemDiv>
 
+const password = p =>
+  <ElemDiv>
+    <Input {...p} type="password" />
+  </ElemDiv>
+
 const select = p =>
   <ElemDiv>
     <Dropdown selection {...p} />
@@ -35,6 +40,7 @@ const checkBox = p =>
   </ElemDiv>
 
 export const TextBox = withAll(textBox);
+export const Password = withAll(password);
 export const Select = withAll(withTextValue(select));
 export const CheckBox = withCheck(checkBox);
 
@@ -115,7 +121,7 @@ const _Table = ({ data, name, link, equalWidth, setSort, children, history, isMo
       </thead>
       <tbody>
         {l.map((o, i) =>
-          <tr key={`tr${i}`} class={link ? "cp" : ""} onClick={() => link && history.push(is(Function, link) ? link(o.id) : '/' + name + '/' + o.id)}>
+          <tr key={`tr${i}`} class={link ? "cp" : ""} onClick={() => link && history.push(is(Function, link) ? link(o) : '/' + name + '/' + o.id)}>
             {keys.map(k => col(i, k, o, children))}
           </tr>
         )}

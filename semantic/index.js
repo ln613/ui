@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.DoubleSelect = exports.Table = exports.Ready = exports.Menu = exports.withMobile = exports.Desktop = exports.Mobile = exports.CheckBox = exports.Select = exports.TextBox = void 0;
+exports.DoubleSelect = exports.Table = exports.Ready = exports.Menu = exports.withMobile = exports.Desktop = exports.Mobile = exports.CheckBox = exports.Select = exports.Password = exports.TextBox = void 0;
 
 var _ramda = require("ramda");
 
@@ -46,6 +46,12 @@ var textBox = function textBox(p) {
   return _react.default.createElement(_controls.ElemDiv, null, _react.default.createElement(_semanticUiReact.Input, p));
 };
 
+var password = function password(p) {
+  return _react.default.createElement(_controls.ElemDiv, null, _react.default.createElement(_semanticUiReact.Input, _extends({}, p, {
+    type: "password"
+  })));
+};
+
 var select = function select(p) {
   return _react.default.createElement(_controls.ElemDiv, null, _react.default.createElement(_semanticUiReact.Dropdown, _extends({
     selection: true
@@ -74,6 +80,8 @@ var checkBox = function checkBox(p) {
 
 var TextBox = (0, _hoc.withAll)(textBox);
 exports.TextBox = TextBox;
+var Password = (0, _hoc.withAll)(password);
+exports.Password = Password;
 var Select = (0, _hoc.withAll)(withTextValue(select));
 exports.Select = Select;
 var CheckBox = (0, _hoc.withCheck)(checkBox); // responsive
@@ -220,7 +228,7 @@ var _Table = function _Table(_ref5) {
       key: "tr".concat(i),
       class: link ? "cp" : "",
       onClick: function onClick() {
-        return link && history.push((0, _ramda.is)(Function, link) ? link(o.id) : '/' + name + '/' + o.id);
+        return link && history.push((0, _ramda.is)(Function, link) ? link(o) : '/' + name + '/' + o.id);
       }
     }, keys.map(function (k) {
       return col(i, k, o, children);

@@ -9,6 +9,11 @@ const textBox = p =>
     <input type="text" {...p} />
   </ElemDiv>
 
+const password = p =>
+  <ElemDiv>
+    <input type="password" {...p} />
+  </ElemDiv>
+
 const checkBox = p =>
   <input type="checkbox" checked={p.value} {...p} />
 
@@ -45,6 +50,7 @@ const checkBoxWithLabel = p =>
   </ElemDiv>
 
 export const TextBox = withAll(textBox);
+export const Password = withAll(password);
 export const Select = withAll(select);
 export const CheckBox = withCheck(checkBoxWithLabel);
 
