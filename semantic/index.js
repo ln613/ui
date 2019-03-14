@@ -133,20 +133,23 @@ var items = function items(menus, setVisible) {
   });
 };
 
-var _menu = function _menu(children, color) {
+var _menu = function _menu(children, color, rightItems) {
   return _react.default.createElement(_semanticUiReact.Menu, {
     inverted: true,
     color: color || 'black',
     style: {
       margin: 0
     }
-  }, children);
+  }, children, _react.default.createElement(_semanticUiReact.Menu.Menu, {
+    position: "right"
+  }, rightItems));
 };
 
 var Menu1 = function Menu1(_ref3) {
   var color = _ref3.color,
       menus = _ref3.menus,
       children = _ref3.children,
+      rightItems = _ref3.rightItems,
       visible = _ref3.visible,
       setVisible = _ref3.setVisible;
   return _react.default.createElement("div", null, _react.default.createElement(Mobile, null, _react.default.createElement(_semanticUiReact.Sidebar.Pushable, null, _react.default.createElement(_semanticUiReact.Sidebar, {
@@ -170,7 +173,7 @@ var Menu1 = function Menu1(_ref3) {
       return setVisible(!visible);
     },
     icon: "sidebar"
-  }), color), children))), _react.default.createElement(Desktop, null, _menu(items(menus, setVisible), color), children));
+  }), color, rightItems), children))), _react.default.createElement(Desktop, null, _menu(items(menus, setVisible), color, rightItems), children));
 };
 
 var Menu = (0, _compose.withState)('visible')(Menu1); // ready

@@ -67,9 +67,15 @@ export const withMobile = Comp => p =>
 // menu
 
 const items = (menus, setVisible) => (menus || []).map((x, i) => <Link to={'/' + (i === 0 ? '' : x)} onClick={() => setVisible(false)}><_Menu.Item name={x} style={{fontWeight: 'bold'}}/></Link>);
-const _menu = (children, color) => <_Menu inverted color={color || 'black'} style={{margin: 0}}>{children}</_Menu>;
+const _menu = (children, color, rightItems) =>
+  <_Menu inverted color={color || 'black'} style={{margin: 0}}>
+    {children}
+    <_Menu.Menu position='right'>
+      {rightItems}
+    </_Menu.Menu>
+  </_Menu>;
 
-const Menu1 = ({ color, menus, children, visible, setVisible }) =>
+const Menu1 = ({ color, menus, children, rightItems, visible, setVisible }) =>
   <div>
     <Mobile>
       <Sidebar.Pushable>
@@ -77,13 +83,13 @@ const Menu1 = ({ color, menus, children, visible, setVisible }) =>
           {items(menus, setVisible)}
         </Sidebar>
         <Sidebar.Pusher dimmed={visible} onClick={() => visible && setVisible(false)} style={{ minHeight: "100vh" }}>
-          {_menu(<_Menu.Item onClick={() => setVisible(!visible)} icon="sidebar"/>, color)}
+          {_menu(<_Menu.Item onClick={() => setVisible(!visible)} icon="sidebar"/>, color, rightItems)}
           {children}
         </Sidebar.Pusher>
       </Sidebar.Pushable>
     </Mobile>
     <Desktop>
-      {_menu(items(menus, setVisible), color)}
+      {_menu(items(menus, setVisible), color, rightItems)}
       {children}
     </Desktop>
   </div>
