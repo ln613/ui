@@ -2,7 +2,7 @@ import React from 'react';
 import { isNil } from 'ramda';
 import { withAll, withCheck } from './hoc';
 
-export const ElemDiv = ({children}) => <div class="pv8">{children}</div>
+export const ElemDiv = p => <div class={'pv8 ' + p.class}>{p.children}</div>
 
 const textBox = p =>
   <ElemDiv>

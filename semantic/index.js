@@ -53,7 +53,9 @@ var password = function password(p) {
 };
 
 var select = function select(p) {
-  return _react.default.createElement(_controls.ElemDiv, null, _react.default.createElement(_semanticUiReact.Dropdown, _extends({
+  return _react.default.createElement(_controls.ElemDiv, {
+    class: "fg1 fixdd"
+  }, _react.default.createElement(_semanticUiReact.Dropdown, _extends({
     selection: true
   }, p)));
 };

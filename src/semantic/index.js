@@ -22,7 +22,7 @@ const password = p =>
   </ElemDiv>
 
 const select = p =>
-  <ElemDiv>
+  <ElemDiv class="fg1 fixdd">
     <Dropdown selection {...p} />
   </ElemDiv>
 

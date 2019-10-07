@@ -15,11 +15,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-var ElemDiv = function ElemDiv(_ref) {
-  var children = _ref.children;
+var ElemDiv = function ElemDiv(p) {
   return _react.default.createElement("div", {
-    class: "pv8"
-  }, children);
+    class: 'pv8 ' + p.class
+  }, p.children);
 };
 
 exports.ElemDiv = ElemDiv;
@@ -49,14 +48,14 @@ var radio = function radio(p) {
   }, p)));
 };
 
-var select = function select(_ref2) {
-  var options = _ref2.options,
-      placeholder = _ref2.placeholder,
-      isGroup = _ref2.isGroup,
-      size = _ref2.size,
-      multiple = _ref2.multiple,
-      onChange = _ref2.onChange,
-      value = _ref2.value;
+var select = function select(_ref) {
+  var options = _ref.options,
+      placeholder = _ref.placeholder,
+      isGroup = _ref.isGroup,
+      size = _ref.size,
+      multiple = _ref.multiple,
+      onChange = _ref.onChange,
+      value = _ref.value;
   return _react.default.createElement("select", {
     onChange: onChange,
     size: size,
