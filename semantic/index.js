@@ -278,7 +278,6 @@ var col = function col(idx, key, obj, children) {
   } else if (p.select) {
     v = _react.default.createElement(Select, {
       name: p.path.replace('{i}', idx),
-      placeholder: "",
       options: p.options
     });
   }
