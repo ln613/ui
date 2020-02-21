@@ -161,7 +161,7 @@ const col = (idx, key, obj, children) => {
     cls += ' edit';
   }
   else if (p.select) {
-    v = <Select name={p.path.replace('{i}', idx)} placeholder="" options={p.options} />;
+    v = <Select name={p.path.replace('{i}', idx)} options={p.options} />;
   }
 
   return (
