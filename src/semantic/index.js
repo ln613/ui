@@ -38,7 +38,7 @@ const password = p => (
 )
 
 const select = p => (
-  <ElemDiv class="fg1 fixdd">
+  <ElemDiv className="fg1 fixdd">
     <Dropdown selection {...p} />
   </ElemDiv>
 )
@@ -91,7 +91,11 @@ export const withMobile = Comp => p =>
 
 const items = (menus, setVisible) =>
   (menus || []).map((x, i) => (
-    <Link to={'/' + (i === 0 ? '' : x)} onClick={() => setVisible(false)}>
+    <Link
+      to={'/' + (i === 0 ? '' : x)}
+      onClick={() => setVisible(false)}
+      key={i}
+    >
       <_Menu.Item name={x} style={{ fontWeight: 'bold' }} />
     </Link>
   ))
@@ -174,7 +178,9 @@ const _Table = ({
 
   return (
     <table
-      class={`ui celled striped table unstackable ${isMobile ? 'mobile' : ''}`}
+      className={`ui celled striped table unstackable ${
+        isMobile ? 'mobile' : ''
+      }`}
       id={name}
       style={isMobile ? { fontSize: '12px' } : {}}
     >
@@ -196,7 +202,7 @@ const _Table = ({
         {l.map((o, i) => (
           <tr
             key={`tr${i}`}
-            class={link ? 'cp' : ''}
+            className={link ? 'cp' : ''}
             onClick={() =>
               link &&
               history.push(
@@ -250,7 +256,7 @@ const col = (idx, key, obj, children) => {
   }
 
   return (
-    <td key={`td${key + idx}`} class={cls}>
+    <td key={`td${key + idx}`} className={cls}>
       {p.children ? (
         p.children(obj, obj[key])
       ) : v && v.props ? (
@@ -272,7 +278,7 @@ const prop =
 const title = (key, children) => prop('title', toTitleCase(key))(key, children)
 const hidden = prop('hidden', false)
 
-// class={sortby === k ? (sortDir === 1 ? '_asc' : '_desc') : ''}
+// className={sortby === k ? (sortDir === 1 ? '_asc' : '_desc') : ''}
 // onClick={() => setSort(name, k, sortDir === 1 ? 2 : 1)}
 
 // DoubleSelect
@@ -357,10 +363,10 @@ const _DoubleSelect = ({
       />
     </div>
     <div style={s2}>
-      <button class={buttonStyle} onClick={onAdd} style={s4}>
+      <button className={buttonStyle} onClick={onAdd} style={s4}>
         &#x3E;&#x3E;
       </button>
-      <button class={buttonStyle} onClick={onRemove}>
+      <button className={buttonStyle} onClick={onRemove}>
         &#x3C;&#x3C;
       </button>
     </div>

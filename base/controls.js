@@ -11,7 +11,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 var ElemDiv = function ElemDiv(p) {
   return /*#__PURE__*/_react["default"].createElement("div", {
-    "class": 'pv8 ' + p["class"]
+    className: 'pv8 ' + p["class"]
   }, p.children);
 };
 exports.ElemDiv = ElemDiv;
@@ -70,7 +70,7 @@ var optionGroup = function optionGroup(key, options) {
 var checkBoxWithLabel = function checkBoxWithLabel(p) {
   return /*#__PURE__*/_react["default"].createElement(ElemDiv, null, checkBox(p), p.title ? /*#__PURE__*/_react["default"].createElement("label", {
     htmlFor: p.name,
-    "class": "label-align"
+    className: "label-align"
   }, p.title) : null);
 };
 var TextBox = (0, _hoc.withAll)(textBox);

@@ -45,7 +45,7 @@ var password = function password(p) {
 };
 var select = function select(p) {
   return /*#__PURE__*/_react["default"].createElement(_controls.ElemDiv, {
-    "class": "fg1 fixdd"
+    className: "fg1 fixdd"
   }, /*#__PURE__*/_react["default"].createElement(_semanticUiReact.Dropdown, _extends({
     selection: true
   }, p)));
@@ -108,7 +108,8 @@ var items = function items(menus, setVisible) {
       to: '/' + (i === 0 ? '' : x),
       onClick: function onClick() {
         return setVisible(false);
-      }
+      },
+      key: i
     }, /*#__PURE__*/_react["default"].createElement(_semanticUiReact.Menu.Item, {
       name: x,
       style: {
@@ -196,7 +197,7 @@ var _Table = function _Table(_ref5) {
   //const sortDir = sort && sort[1];
 
   return /*#__PURE__*/_react["default"].createElement("table", {
-    "class": "ui celled striped table unstackable ".concat(isMobile ? 'mobile' : ''),
+    className: "ui celled striped table unstackable ".concat(isMobile ? 'mobile' : ''),
     id: name,
     style: isMobile ? {
       fontSize: '12px'
@@ -211,7 +212,7 @@ var _Table = function _Table(_ref5) {
   }))), /*#__PURE__*/_react["default"].createElement("tbody", null, l.map(function (o, i) {
     return /*#__PURE__*/_react["default"].createElement("tr", {
       key: "tr".concat(i),
-      "class": link ? 'cp' : '',
+      className: link ? 'cp' : '',
       onClick: function onClick() {
         return link && history.push((0, _ramda.is)(Function, link) ? link(o) : '/' + name + '/' + o.id);
       }
@@ -260,7 +261,7 @@ var col = function col(idx, key, obj, children) {
   }
   return /*#__PURE__*/_react["default"].createElement("td", {
     key: "td".concat(key + idx),
-    "class": cls
+    className: cls
   }, p.children ? p.children(obj, obj[key]) : v && v.props ? v : /*#__PURE__*/_react["default"].createElement("div", {
     dangerouslySetInnerHTML: {
       __html: v
@@ -281,7 +282,7 @@ var title = function title(key, children) {
 };
 var hidden = prop('hidden', false);
 
-// class={sortby === k ? (sortDir === 1 ? '_asc' : '_desc') : ''}
+// className={sortby === k ? (sortDir === 1 ? '_asc' : '_desc') : ''}
 // onClick={() => setSort(name, k, sortDir === 1 ? 2 : 1)}
 
 // DoubleSelect
@@ -362,11 +363,11 @@ var _DoubleSelect = function _DoubleSelect(_ref7) {
   })), /*#__PURE__*/_react["default"].createElement("div", {
     style: s2
   }, /*#__PURE__*/_react["default"].createElement("button", {
-    "class": buttonStyle,
+    className: buttonStyle,
     onClick: onAdd,
     style: s4
   }, ">>"), /*#__PURE__*/_react["default"].createElement("button", {
-    "class": buttonStyle,
+    className: buttonStyle,
     onClick: onRemove
   }, "<<")), /*#__PURE__*/_react["default"].createElement("div", {
     style: s3
